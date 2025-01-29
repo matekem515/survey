@@ -47,6 +47,8 @@ cluster_names_and_descriptions = get_cluster_names_and_descriptions()
 predicted_cluster_id = predict_model(model, data=person_df)["Cluster"].values[0]
 predicted_cluster_data = cluster_names_and_descriptions[predicted_cluster_id]
 
+st.header(f"Gdzie Ci najblizej ?")
+
 st.header(f"Najbliżej Ci do grupy {predicted_cluster_data['name']}")
 st.markdown(predicted_cluster_data['description'])
 same_cluster_df = all_df[all_df["Cluster"] == predicted_cluster_id]
